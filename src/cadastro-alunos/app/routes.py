@@ -31,7 +31,8 @@ def cadastrar():
 
     return render_template("cadastrar.html")
 
-    @main.route("/editar/<int:id>", methods=["GET", "POST"])
+
+@main.route("/editar/<int:id>", methods=["GET", "POST"])
 def editar(id):
     aluno = Aluno.query.get_or_404(id)
 
@@ -50,7 +51,8 @@ def editar(id):
 
     return render_template("editar.html", aluno=aluno)
 
-    @main.route("/excluir/<int:id>", methods=["POST"])
+
+@main.route("/excluir/<int:id>", methods=["POST"])
 def excluir(id):
     aluno = Aluno.query.get_or_404(id)
 
