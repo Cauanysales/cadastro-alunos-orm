@@ -42,7 +42,13 @@
                         <td>{{ aluno.matricula }}</td>
                         <td>
     <a href="{{ url_for('main.editar', id=aluno.id) }}">Editar</a>
+
+    <form action="{{ url_for('main.excluir', id=aluno.id) }}" method="POST" style="display:inline;">
+        <button type="submit">Excluir</button>
+    </form>
 </td>
+
+    
                     </tr>
                 {% endfor %}
             </tbody>

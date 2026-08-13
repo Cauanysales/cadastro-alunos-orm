@@ -49,3 +49,12 @@ def editar(id):
         return redirect(url_for("main.index"))
 
     return render_template("editar.html", aluno=aluno)
+
+    @main.route("/excluir/<int:id>", methods=["POST"])
+def excluir(id):
+    aluno = Aluno.query.get_or_404(id)
+
+    db.session.delete(aluno)
+    db.session.commit()
+
+    return redirect(url_for("main.index"))
