@@ -25,6 +25,7 @@
                     <th>Telefone</th>
                     <th>Curso</th>
                     <th>Matrícula</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
 
@@ -39,6 +40,9 @@
                         <td>{{ aluno.telefone }}</td>
                         <td>{{ aluno.curso }}</td>
                         <td>{{ aluno.matricula }}</td>
+                        <td>
+    <a href="{{ url_for('main.editar', id=aluno.id) }}">Editar</a>
+</td>
                     </tr>
                 {% endfor %}
             </tbody>
